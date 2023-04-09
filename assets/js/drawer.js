@@ -6,8 +6,9 @@ function drawLine(color, line, width = 1) {
     _ctx.beginPath();
     _ctx.strokeStyle = color;
     _ctx.lineWidth = width;
-    _ctx.moveTo(line[0], line[1]);
-    _ctx.lineTo(line[2], line[3]);
+    // 0.5 for displaying clearer lines
+    _ctx.moveTo(line[0] + 0.5, line[1] + 0.5);
+    _ctx.lineTo(line[2] + 0.5, line[3] + 0.5);
     _ctx.stroke();
 }
 

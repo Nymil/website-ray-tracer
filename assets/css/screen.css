@@ -7,10 +7,3 @@ body {
     overflow: hidden;
     background-color: rgb(124, 124, 124);
 }
-
-canvas {
-    min-width: 1600px;
-    min-height: 800px;
-    width: 1600px;
-    height: 800px;
-}
