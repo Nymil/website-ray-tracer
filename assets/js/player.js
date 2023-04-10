@@ -34,4 +34,12 @@ class Player {
                 break;
         }
     }
+
+    turn(direction) {
+        if (direction === 'right') {
+            this.angle += 6 / 180
+        } else if (direction === 'left'){
+            this.angle -= 6 / 180
+        }
+    }
 }
