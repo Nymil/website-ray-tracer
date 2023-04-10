@@ -13,6 +13,7 @@ class Game {
 
     draw() {
         this.clearScreen();
+        this.map.draw();
         this.player.draw();
     }
 

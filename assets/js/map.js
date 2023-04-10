@@ -1,6 +1,20 @@
 class Map {
     constructor() {
         this.board = this.getBoard();
+        this.cellLength = _$canvas.height / this.board.length;
+    }
+
+    draw() {
+        for (let row = 0; row < this.board.length; row++) {
+            for (let col = 0; col < this.board.length; col++) {
+                if (this.isWall(col, row)) drawRect('#c90202', [col * this.cellLength, row * this.cellLength, this.cellLength, this.cellLength]);
+                drawRect('#a80000', [col * this.cellLength, row * this.cellLength, this.cellLength, this.cellLength], 1);
+            }
+        }
+    }
+
+    isWall(col, row) {
+        return this.board[row][col] === 1;
     }
 
     getBoard() {
