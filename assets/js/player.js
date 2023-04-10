@@ -4,7 +4,7 @@ class Player {
         this.y = _$canvas.height / 2;
         this.radius = 7;
         this.angle = - Math.PI / 2;
-        this.vel = 2;
+        this.vel = 3;
     } 
 
     draw() {
