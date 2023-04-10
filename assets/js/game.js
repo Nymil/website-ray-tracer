@@ -36,7 +36,7 @@ class Game {
         this.pressedKeys = this.pressedKeys.filter(arrayKey => key !== arrayKey);
     }
     addEventListeners() {
-        document.addEventListener('keydown', (e) => this.addPressedKey(e.key));
-        document.addEventListener('keyup', (e) => this.removePressedKey(e.key));
+        document.addEventListener('keydown', (e) => this.addPressedKey(e.key.toLowerCase()));
+        document.addEventListener('keyup', (e) => this.removePressedKey(e.key.toLowerCase()));
     }
 }
