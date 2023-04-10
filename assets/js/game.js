@@ -28,15 +28,15 @@ class Game {
         }, 1000 / this.fps);
     }
 
-    addPressedKey(e) {
+    addPressedKey(key) {
         // only add if it doesn't already exist
-        if (!this.pressedKeys.includes(e.key)) this.pressedKeys.push(e.key);
+        if (!this.pressedKeys.includes(key)) this.pressedKeys.push(key);
     }
-    removePressedKey(e) {
-        this.pressedKeys = this.pressedKeys.filter(key => e.key !== key);
+    removePressedKey(key) {
+        this.pressedKeys = this.pressedKeys.filter(arrayKey => key !== arrayKey);
     }
     addEventListeners() {
-        document.addEventListener('keydown', (e) => this.addPressedKey(e));
-        document.addEventListener('keyup', (e) => this.removePressedKey(e));
+        document.addEventListener('keydown', (e) => this.addPressedKey(e.key));
+        document.addEventListener('keyup', (e) => this.removePressedKey(e.key));
     }
 }
