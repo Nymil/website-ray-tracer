@@ -1,5 +1,6 @@
 class Player {
-    constructor() {
+    constructor(game) {
+        this.game = game;
         this.x = _$canvas.height / 2;
         this.y = _$canvas.height / 2;
         this.radius = 7;
@@ -15,24 +16,30 @@ class Player {
     }
 
     move(direction) {
+        let nextX;
+        let nextY;
+
         switch (direction) {
             case 'forward':
-                this.x += this.vel * Math.cos(this.angle);
-                this.y += this.vel * Math.sin(this.angle);
+                nextX = this.x + this.vel * Math.cos(this.angle);
+                nextY = this.y + this.vel * Math.sin(this.angle);
                 break;
             case 'backward':
-                this.x -= this.vel * Math.cos(this.angle);
-                this.y -= this.vel * Math.sin(this.angle);
+                nextX = this.x - this.vel * Math.cos(this.angle);
+                nextY = this.y - this.vel * Math.sin(this.angle);
                 break;
             case 'left':
-                this.x += this.vel * Math.cos(this.angle - Math.PI / 2);
-                this.y += this.vel * Math.sin(this.angle - Math.PI / 2);
+                nextX = this.x + this.vel * Math.cos(this.angle - Math.PI / 2);
+                nextY = this.y + this.vel * Math.sin(this.angle - Math.PI / 2);
                 break;
             case 'right':
-                this.x += this.vel * Math.cos(this.angle + Math.PI / 2);
-                this.y += this.vel * Math.sin(this.angle + Math.PI / 2);
+                nextX = this.x + this.vel * Math.cos(this.angle + Math.PI / 2);
+                nextY = this.y + this.vel * Math.sin(this.angle + Math.PI / 2);
                 break;
         }
+
+        if (!this.game.map.isWall(Math.floor(nextX / this.game.map.cellLength), Math.floor(this.y / this.game.map.cellLength))) this.x = nextX;
+        if (!this.game.map.isWall(Math.floor(this.x / this.game.map.cellLength), Math.floor(nextY / this.game.map.cellLength))) this.y = nextY;
     }
 
     turn(direction) {
