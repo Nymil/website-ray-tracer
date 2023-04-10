@@ -2,6 +2,8 @@ class Game {
     constructor() {
         this.player = new Player();
         this.fps = 60;
+        this.map = new Map();
+        console.log(this.map.board);
     }
 
     clearScreen() {
@@ -18,6 +20,7 @@ class Game {
     }
 
     run() {
+        // main game loop
         setInterval(() => {
             this.update();
             this.draw();
