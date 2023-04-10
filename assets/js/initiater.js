@@ -2,8 +2,12 @@
 
 document.addEventListener('DOMContentLoaded', init);
 
+let player;
+
 function init() {
     setUpCanvas();
+    player = new Player();
+    slowlyMoveDirection();
 }
 
 function setUpCanvas() {
@@ -12,4 +16,11 @@ function setUpCanvas() {
     _$canvas.width = 1600;
     _$canvas.height = 800;
     drawRect('black', [0, 0, 1600, 800]);
+}
+
+function slowlyMoveDirection() {
+    drawRect('black', [0, 0, 1600, 800]);
+    player.move('forward');
+    player.draw();
+    setTimeout(slowlyMoveDirection, 0.5);
 }

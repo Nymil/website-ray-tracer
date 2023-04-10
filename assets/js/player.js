@@ -3,7 +3,7 @@ class Player {
         this.x = _$canvas.height / 2;
         this.y = _$canvas.height / 2;
         this.radius = 7;
-        this.angle = - Math.PI / 2;
+        this.angle = - Math.PI / 3;
         this.vel = 2;
     } 
 
@@ -16,17 +16,21 @@ class Player {
 
     move(direction) {
         switch (direction) {
-            case 'up':
-                this.y -= this.vel;
+            case 'forward':
+                this.x += this.vel * Math.cos(this.angle);
+                this.y += this.vel * Math.sin(this.angle);
                 break;
-            case 'down':
-                this.y += this.vel;
+            case 'backward':
+                this.x += this.vel * Math.cos(this.angle);
+                this.y += this.vel * Math.sin(this.angle);
                 break;
             case 'left':
-                this.x -= this.vel;
+                this.x += this.vel * Math.cos(this.angle - Math.PI / 2);
+                this.y += this.vel * Math.sin(this.angle - Math.PI / 2);
                 break;
             case 'right':
-                this.x += this.vel;
+                this.x += this.vel * Math.cos(this.angle + Math.PI / 2);
+                this.y += this.vel * Math.sin(this.angle + Math.PI / 2);
                 break;
         }
     }
