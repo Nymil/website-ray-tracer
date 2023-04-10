@@ -4,11 +4,23 @@ class Game {
         this.fps = 60;
     }
 
+    clearScreen() {
+        drawRect('black', [0, 0, _$canvas.width, _$canvas.height]);
+    }
+
+    draw() {
+        this.clearScreen();
+        this.player.draw();
+    }
+
+    update() {
+        this.player.move('forward');
+    }
+
     run() {
         setInterval(() => {
-            drawRect('black', [0, 0, 1600, 800]);
-            this.player.move('forward');
-            this.player.draw();
+            this.update();
+            this.draw();
         }, 1000 / this.fps);
     }
 }

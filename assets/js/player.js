@@ -3,7 +3,7 @@ class Player {
         this.x = _$canvas.height / 2;
         this.y = _$canvas.height / 2;
         this.radius = 7;
-        this.angle = - Math.PI / 3;
+        this.angle = - Math.PI / 2;
         this.vel = 2;
     } 
 
