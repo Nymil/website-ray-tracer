@@ -2,12 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', init);
 
-let player;
+let _game;
 
 function init() {
     setUpCanvas();
-    player = new Player();
-    slowlyMoveDirection();
+    startGame();
 }
 
 function setUpCanvas() {
@@ -18,9 +17,7 @@ function setUpCanvas() {
     drawRect('black', [0, 0, 1600, 800]);
 }
 
-function slowlyMoveDirection() {
-    drawRect('black', [0, 0, 1600, 800]);
-    player.move('forward');
-    player.draw();
-    setTimeout(slowlyMoveDirection, 0.5);
+function startGame() {
+    _game = new Game();
+    _game.run();
 }
