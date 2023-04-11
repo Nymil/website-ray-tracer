@@ -29,6 +29,8 @@ class Player {
             const ray = new Ray(this, angle);
             this.rays.push(ray);
         }
+        // cast the added rays
+        this.rays.forEach(ray => ray.cast());
     }
 
     move(direction) {
