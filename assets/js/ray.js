@@ -39,6 +39,7 @@ class Ray {
 
             if (this.length > 1300) {
                 this.rayTooLong = true;
+                continue;
             }
             
             const curCol = Math.floor((this.startX + this.length * Math.cos(this.angle)) / this.map.cellLength); 
