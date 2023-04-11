@@ -6,6 +6,7 @@ class Player {
         this.radius = 7;
         this.angle = - Math.PI / 2;
         this.vel = 3;
+        this.rotVel = 8 / 180;
         this.rayCount = 200;
         this.fov = Math.PI / 3;
         this.rays = [];
@@ -63,9 +64,9 @@ class Player {
 
     turn(direction) {
         if (direction === 'right') {
-            this.angle += 8 / 180
+            this.angle += this.rotVel;
         } else if (direction === 'left'){
-            this.angle -= 8 / 180
+            this.angle -= this.rotVel;
         }
     }
 }
