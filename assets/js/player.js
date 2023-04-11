@@ -6,8 +6,8 @@ class Player {
         this.radius = 7;
         this.angle = - Math.PI / 2;
         this.vel = 3;
-        this.rayCount = 1;
-        this.fov = 60;
+        this.rayCount = 200;
+        this.fov = Math.PI / 3;
         this.rays = [];
     } 
 
@@ -28,6 +28,7 @@ class Player {
         for (let i = 0; i < this.rayCount; i++) {
             const ray = new Ray(this, angle);
             this.rays.push(ray);
+            angle += this.fov / this.rayCount;
         }
         // cast the added rays
         this.rays.forEach(ray => ray.cast());
@@ -62,9 +63,9 @@ class Player {
 
     turn(direction) {
         if (direction === 'right') {
-            this.angle += 6 / 180
+            this.angle += 8 / 180
         } else if (direction === 'left'){
-            this.angle -= 6 / 180
+            this.angle -= 8 / 180
         }
     }
 }
