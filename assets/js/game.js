@@ -2,7 +2,7 @@ class Game {
     constructor() {
         this.player = new Player(this);
         this.fps = 60;
-        this.map = new Map();
+        this.map = new Map(this);
         this.pressedKeys = [];
         this.addEventListeners();
     }
