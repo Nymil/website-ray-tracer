@@ -11,14 +11,15 @@ class Player {
 
     draw() {
         drawCircle('#FFFFFF', [this.x, this.y], this.radius);
-        // draw direction line
+        // draw gray direction line
         const directionLineLength = 20
-        this.rays.forEach(ray => ray.draw());
         drawLine('#474747', [this.x, this.y, this.x + directionLineLength * Math.cos(this.angle), this.y + directionLineLength * Math.sin(this.angle)]);
+        // draw casted rays
+        this.rays.forEach(ray => ray.draw());
     }
 
     castRays() {
-        
+
     }
 
     move(direction) {
