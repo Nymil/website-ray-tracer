@@ -6,6 +6,7 @@ class Player {
         this.radius = 7;
         this.angle = - Math.PI / 2;
         this.vel = 3;
+        this.rayCount = 1;
         this.rays = [];
     } 
 
