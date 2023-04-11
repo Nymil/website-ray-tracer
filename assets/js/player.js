@@ -7,6 +7,7 @@ class Player {
         this.angle = - Math.PI / 2;
         this.vel = 3;
         this.rayCount = 1;
+        this.fov = 60;
         this.rays = [];
     } 
 
@@ -20,7 +21,14 @@ class Player {
     }
 
     castRays() {
-
+        // clear previous rays
+        this.rays = [];
+        // add correct amount of rays to ray cast
+        let angle = this.angle - this.fov / 2
+        for (let i = 0; i < this.rayCount; i++) {
+            const ray = new Ray(this, angle);
+            this.rays.push(ray);
+        }
     }
 
     move(direction) {

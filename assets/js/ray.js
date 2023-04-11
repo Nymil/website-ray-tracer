@@ -6,4 +6,8 @@ class Ray {
     draw() {
 
     }
+
+    cast() {
+        
+    }
 }
