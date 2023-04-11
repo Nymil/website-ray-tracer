@@ -8,7 +8,7 @@ class Player {
         this.vel = 3;
         this.rotVel = 8 / 180;
         this.rayCount = 300;
-        this.fov = Math.PI / 3;
+        this.fov = Math.PI / 4;
         this.rays = [];
     } 
 

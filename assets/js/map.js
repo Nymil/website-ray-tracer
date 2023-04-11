@@ -15,7 +15,7 @@ class Map {
         }
 
         // draw the walls
-        const rays = this.game.player.rays.sort((a, b) => a.angle - b.angle);
+        const rays = this.game.player.rays;
         rays.forEach((ray, index) => {
             const rayLength = ray.length * Math.cos(this.game.player.angle - ray.angle); // for removing fish eye effect
             const wallHeight = 100000 / rayLength;
