@@ -21,3 +21,16 @@ p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
+
+div {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input {
+    height: 1.25rem;
+    width: 4rem;
+}

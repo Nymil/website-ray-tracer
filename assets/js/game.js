@@ -55,5 +55,6 @@ class Game {
     addEventListeners() {
         document.addEventListener('keydown', (e) => this.addPressedKey(e.key.toLowerCase()));
         document.addEventListener('keyup', (e) => this.removePressedKey(e.key.toLowerCase()));
+        document.querySelector('#ray-count').addEventListener('change', () => this.player.rayCount = document.querySelector('#ray-count').value);
     }
 }

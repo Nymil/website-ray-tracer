@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+    document.querySelector('#ray-count').value = 300;
     setUpCanvas();
     startGame();
 }
