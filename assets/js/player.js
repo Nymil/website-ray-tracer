@@ -6,13 +6,19 @@ class Player {
         this.radius = 7;
         this.angle = - Math.PI / 2;
         this.vel = 3;
+        this.rays = [];
     } 
 
     draw() {
         drawCircle('#FFFFFF', [this.x, this.y], this.radius);
         // draw direction line
         const directionLineLength = 20
+        this.rays.forEach(ray => ray.draw());
         drawLine('#474747', [this.x, this.y, this.x + directionLineLength * Math.cos(this.angle), this.y + directionLineLength * Math.sin(this.angle)]);
+    }
+
+    castRays() {
+        
     }
 
     move(direction) {

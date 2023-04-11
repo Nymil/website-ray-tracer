@@ -34,6 +34,7 @@ class Game {
             this.player.turn('left');
         }
         
+        this.player.castRays();
     }
 
     run() {
